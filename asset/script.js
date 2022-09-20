@@ -18,14 +18,12 @@ function setTime() {
 }
 setTime();
 
-function actualQuestion1() {
+var question1 = function actualQuestion1() {
   testQuestion.textContent = "Commonly used data types Do Not include";
-  var bot1 = (buttonB1.textContent = " Strings");
-  var bot2 = (buttonB2.textContent = " Booleans");
-  var bot3 = (buttonB3.textContent = " Alerts");
-  var bot4 = (buttonB4.textContent = " Numbers");
-
-  
+  buttonB1.textContent = " Strings";
+  buttonB2.textContent = " Booleans";
+  buttonB3.textContent = " Alerts";
+  buttonB4.textContent = " Numbers";
 }
 function actualQuestion2() {
   testQuestion.textContent =
@@ -61,10 +59,3 @@ function actualQuestion5() {
   buttonB3.textContent = " For loops";
   buttonB4.textContent = " Console.log";
 }
-
-
-    if (actualQuestion1) 
-    console.log(actualQuestion1());
-else actualQuestion1 !== true;
-console.log(actualQuestion2());
-        
