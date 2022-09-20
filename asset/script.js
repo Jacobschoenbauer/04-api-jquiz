@@ -1,0 +1,1 @@
+var startBut = document.querySelector(".start")
