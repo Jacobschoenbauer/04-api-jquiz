@@ -25,10 +25,7 @@ function actualQuestion1() {
   var bot3 = (buttonB3.textContent = " Alerts");
   var bot4 = (buttonB4.textContent = " Numbers");
 
-  if ( "click", bot2 === true) console.log(actualQuestion2);
-  else bot2 !== true;
-  console.log(actualQuestion2);
-  console.log("Wrong");
+  
 }
 function actualQuestion2() {
   testQuestion.textContent =
@@ -65,4 +62,9 @@ function actualQuestion5() {
   buttonB4.textContent = " Console.log";
 }
 
-actualQuestion1();
+
+    if (actualQuestion1) 
+    console.log(actualQuestion1());
+else actualQuestion1 !== true;
+console.log(actualQuestion2());
+        
