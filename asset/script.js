@@ -69,6 +69,11 @@ const questions = [
   },
 ];
  
+function handleAnswer (answer){
+
+}
+
+
 //used to display the question on the screen
 function askQuestion (index){
   const question = questions[index]
@@ -77,8 +82,13 @@ function askQuestion (index){
     buttonB2.textContent =  question.answers[1].text;
     buttonB3.textContent = question.answers[2].text;
     buttonB4.textContent = question.answers[3].text;
-  
+  buttonB4.addEventListener("click", function(e){
+    askQuestion(index +1)
+  })
 }
 
 setTime();
 askQuestion(0)
+
+//listens for buttons click
+
