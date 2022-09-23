@@ -5,7 +5,7 @@ const buttonB1 = document.querySelector(".b1");
 const buttonB2 = document.querySelector(".b2");
 const buttonB3 = document.querySelector(".b3");
 const buttonB4 = document.querySelector(".b4");
- 
+
 //set timer for project
 let secondsLeft = 70;
 function setTime() {
@@ -44,7 +44,7 @@ const questions = [
     answers: [
       { text: "JavaScript" },
       { text: "Terminal/bash" },
-      { text: "For loops",},
+      { text: "For loops" },
       { text: "Console.log", correct: true },
     ],
   },
@@ -68,27 +68,41 @@ const questions = [
     ],
   },
 ];
- 
-function handleAnswer (answer){
 
+function handleAnswer(answer) {
+  
+  console.log (answer)
+  
+  // check see if answer is correct
+  const isCorrect = answer.correct === true
+  // let user know if correct or wrong
+  // load next question
+  // subtract time from count down if in correct
+  if (! isCorrect) secondsLeft -= 10
 }
 
+const buttons = [buttonB1, buttonB2, buttonB3, buttonB4];
 
 //used to display the question on the screen
-function askQuestion (index){
-  const question = questions[index]
-    testQuestion.textContent = question.query;
-    buttonB1.textContent = question.answers[0].text;
-    buttonB2.textContent =  question.answers[1].text;
-    buttonB3.textContent = question.answers[2].text;
-    buttonB4.textContent = question.answers[3].text;
-  buttonB4.addEventListener("click", function(e){
-    askQuestion(index +1)
-  })
+function askQuestion(index) {
+  const question = questions[index];
+  testQuestion.textContent = question.query;
+  // will send each button through this for each question
+  buttons.forEach((button, buttonIndex) => {
+    // clear event handler so it can move on to the next question and we can use the button again
+    button.onclick = null;
+    // get the answer
+    const answer = question.answers[buttonIndex];
+    // assign text to the button
+    button.textContent = answer.text;
+    // add event handler 
+    button.addEventListener("click",e => {
+      handleAnswer(answer)
+    }) 
+  });
 }
 
 setTime();
-askQuestion(0)
+askQuestion(0);
 
 //listens for buttons click
-
