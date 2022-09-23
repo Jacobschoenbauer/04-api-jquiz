@@ -69,16 +69,18 @@ const questions = [
   },
 ];
 
-function handleAnswer(answer) {
+function handleAnswer(answer, questionIndex) {
   
   console.log (answer)
   
   // check see if answer is correct
   const isCorrect = answer.correct === true
   // let user know if correct or wrong
-  // load next question
+  
   // subtract time from count down if in correct
   if (! isCorrect) secondsLeft -= 10
+  // load next question
+  askQuestion(questionIndex +1)
 }
 
 const buttons = [buttonB1, buttonB2, buttonB3, buttonB4];
@@ -97,7 +99,8 @@ function askQuestion(index) {
     button.textContent = answer.text;
     // add event handler 
     button.addEventListener("click",e => {
-      handleAnswer(answer)
+      handleAnswer(answer, index)
+
     }) 
   });
 }
