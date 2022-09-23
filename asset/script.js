@@ -5,14 +5,19 @@ const buttonB1 = document.querySelector(".b1");
 const buttonB2 = document.querySelector(".b2");
 const buttonB3 = document.querySelector(".b3");
 const buttonB4 = document.querySelector(".b4");
+const rightWrong = document.querySelector(".rightwrong");
+var timerInterval;
+
 
 //set timer for project
 let secondsLeft = 70;
 function setTime() {
-  var timerInterval = setInterval(function () {
+  timerInterval = setInterval(function () {
     secondsLeft--;
     setTimer.textContent = secondsLeft;
     if (secondsLeft <= 0) {
+      // stops countdown will not go negative
+      
       window.location = "scores.html";
     }
   }, 1000);
@@ -70,18 +75,28 @@ const questions = [
 ];
 
 function handleAnswer(answer, questionIndex) {
-  
-  console.log (answer)
-  
+  console.log(answer);
+
   // check see if answer is correct
-  const isCorrect = answer.correct === true
+  const isCorrect = answer.correct === true;
   // let user know if correct or wrong
-  
+
   // subtract time from count down if in correct
-  if (! isCorrect) secondsLeft -= 10
+  if (isCorrect) {
+    rightWrong.textContent = "Correct";
+  } else {
+    rightWrong.textContent = "Wrong";
+    secondsLeft -= 10;
+  }
+  //leads this question to the next question
+
   // load next question
   askQuestion(questionIndex +1)
-}
+  
+
+  
+  }
+
 
 const buttons = [buttonB1, buttonB2, buttonB3, buttonB4];
 
@@ -97,11 +112,10 @@ function askQuestion(index) {
     const answer = question.answers[buttonIndex];
     // assign text to the button
     button.textContent = answer.text;
-    // add event handler 
-    button.addEventListener("click",e => {
-      handleAnswer(answer, index)
-
-    }) 
+    // add event handler
+    button.addEventListener("click", (e) => {
+      handleAnswer(answer, index);
+    });
   });
 }
 
