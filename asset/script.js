@@ -10,7 +10,7 @@ var timerInterval;
 
 
 //set timer for project
-let secondsLeft = 70;
+let secondsLeft = 111111170;
 function setTime() {
   timerInterval = setInterval(function () {
     secondsLeft--;
