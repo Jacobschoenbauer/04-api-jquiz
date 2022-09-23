@@ -1,11 +1,13 @@
-* {
+body{
     background-color: rgb(144, 190, 190);
 }
 
-.header1{
+.header1, .question{
     display: flex;
     justify-content: center;
     color: white;
+    font-size: 35px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .highscore{
     display: flex;
@@ -17,7 +19,44 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    font-size: 20px;
 }
-.page1section{
+.page1section {
+    text-align: center;
     
 }
+.start, .b1, .b2, .b3, .b4{
+    height: 90px;
+    width: 100px;
+    background-color: rgb(230, 18, 18);
+    color: aliceblue;
+}
+.word{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+.time{
+    display: flex;
+
+}
+.mainq{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.question{
+    margin: 60px;
+    font-size: 30px;
+}
+.button{
+    display: flex;
+    flex-direction: column;
+
+}
+.b1, .b2, .b3, .b4{
+    margin: 10px;
+    
+
+}
+
