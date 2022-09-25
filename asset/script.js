@@ -23,14 +23,6 @@ function setTime() {
   }, 1000);
 }
 
-
-
-
-
-
-
-
-
 // make a object to set up questions get rid of functions
 const questions = [
   {
@@ -123,7 +115,7 @@ function askQuestion(index) {
   });
 }
 
+
+
 setTime();
 askQuestion(0);
-
-

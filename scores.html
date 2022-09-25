@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,20 @@
     <title>Document</title>
     <link rel="stylesheet" href="asset/style.css">
 </head>
+
 <body>
-    <header>
-        <h1 class="play"></h1>
-    </header>
-    <article>
-     
-        <div>Your Score</div>
-        <div class="score">Highscore</div>
-        
-    
-    </article>
-    <footer>
-        <div>Thank you for playing</div>
-    </footer>
-    <script src="asset/script.js"></script>
+    <div class="lastpage">
+        <h1>HighScore page</h1>
+        <form id="thescore" method="POST">
+            <label for="playname">Name: </label>
+            <input type="text" name="playname" id="playname" />
+        </form>
+
+        <ul id="highscore"></ul>
+        <footer>
+            <div>Thank you for playing</div>
+        </footer>
+        <script src="asset/scripthigh.js"></script>
 </body>
+
 </html>
