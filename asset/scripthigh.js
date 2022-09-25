@@ -23,9 +23,9 @@ function init() {
   var storedNames = JSON.parse(localStorage.getItem("namie"));
   if (storedNames !== null) {
     namie = storedNames;
-    // listes the names
-    listingNames();
   }
+  // listes the names to dom
+  listingNames();
 }
 // names to local storage
 function storedNames() {
@@ -35,7 +35,7 @@ function storedNames() {
 
 eventNames.addEventListener("submit", function (event) {
   event.preventDefault();
-  const nameInput = namesEnter.value.trim();
+  var nameInput = namesEnter.value.trim();
   if (nameInput === "") {
     return;
   }
@@ -46,4 +46,9 @@ eventNames.addEventListener("submit", function (event) {
   listingNames();
   storedNames();
 });
+
+listingNames();
+
+storedNames();
+
 init();
