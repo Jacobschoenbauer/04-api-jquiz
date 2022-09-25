@@ -7,7 +7,7 @@ const buttonB3 = document.querySelector(".b3");
 const buttonB4 = document.querySelector(".b4");
 const rightWrong = document.querySelector(".rightwrong");
 const storedScore = document.querySelector(".score");
-var timerInterval;
+let timerInterval;
 
 //set timer for project
 let secondsLeft = 170;
@@ -22,8 +22,14 @@ function setTime() {
     }
   }, 1000);
 }
-var stodScore = localStorage.setItem("highScore", secondsLeft);
-storedScore.textContent = secondsLeft;
+
+
+
+
+
+
+
+
 
 // make a object to set up questions get rid of functions
 const questions = [
@@ -120,4 +126,4 @@ function askQuestion(index) {
 setTime();
 askQuestion(0);
 
-//listens for buttons click
+
