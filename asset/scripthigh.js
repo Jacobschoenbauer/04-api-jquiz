@@ -3,11 +3,11 @@ var theScores = document.querySelector("#thescore");
 var theHeights = document.querySelector("#highscore");
 var todoCountSpan = document.querySelector("#todo-count");
 
-function renderTodos() {
+function displayName() {
   theHeights.innerHTML = "";
 
   for (var i = 0; i < height.length; i++) {
-    var todo = height[i];
+    var loop = height[i];
 
     var li = document.createElement("li");
     li.textContent = height;
@@ -22,33 +22,33 @@ function renderTodos() {
 }
 
 function init() {
-  var storedTodos = JSON.parse(localStorage.getItem("height"));
+  var storedNames = JSON.parse(localStorage.getItem("height"));
 
-  if (storedTodos !== null) {
-    height = storedTodos;
+  if (storedNames !== null) {
+    height = storedNames;
   }
 
-  renderTodos();
+  displayName();
 }
 
-function storeTodos() {
+function storedname() {
   localStorage.setItem("height", JSON.stringify(height));
 }
 
 theScores.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  var todoText = playsName.value.trim();
+  var scoNmae = playsName.value.trim();
 
-  if (todoText === "") {
+  if (scoNmae === "") {
     return;
   }
 
-  height.push(todoText);
+  height.push(scoNmae);
   playsName.value = "";
 
-  storeTodos();
-  renderTodos();
+  storedname();
+  displayName();
 });
 
 theHeights.addEventListener("click", function (event) {
@@ -58,8 +58,8 @@ theHeights.addEventListener("click", function (event) {
     var index = element.parentElement.getAttribute("data-index");
     height.splice(index, 1);
 
-    storeTodos();
-    renderTodos();
+    storedname();
+    displayName();
   }
 });
 
