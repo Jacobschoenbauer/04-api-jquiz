@@ -7,7 +7,7 @@ function listingNames() {
   //clears list names
   listNames.innerHtml = "";
   //sets a list of names that goes through the for loop
-  for (var i = 0; i < namie.lenght; i++) {
+  for (var i = 0; i < namie.length; i++) {
     var nightName = namie[i];
 
     // adds li to the html
