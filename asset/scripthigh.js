@@ -1,4 +1,4 @@
-const namesEnter = document.querySelector("#names");
+const namesEnter = document.querySelector("#yesnames");
 const listNames = document.querySelector("#lastscores");
 const eventNames = document.querySelector("#finalscore");
 var namie = [];
