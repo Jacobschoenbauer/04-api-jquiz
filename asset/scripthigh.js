@@ -62,4 +62,4 @@ listNames.addEventListener("click", function (event) {
 });
 
 
-init();
+init()
