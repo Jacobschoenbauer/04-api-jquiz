@@ -47,8 +47,19 @@ eventNames.addEventListener("submit", function (event) {
   storedNames();
 });
 
-listingNames();
 
-storedNames();
+//
+listNames.addEventListener("click", function (event) {
+  var element = event.target;
+
+  if (element.matches("button") === true) {
+    var index = element.parentElement.getAttribute("data-index");
+    nightName.splice(index, 1);
+
+    storedNames();
+    listingNames();
+  }
+});
+
 
 init();
